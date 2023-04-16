@@ -63,13 +63,61 @@ for(let i = 0; i < images.length; i++){
      document.querySelector('.container-card').innerHTML += `
           <div class="card active position-relative ">
                <img src="${imgSingola}${singoloOggetto.image}" class="" alt="...">
-               <div class="position-absolute bottom-0 end-0">
+               <div class="position-absolute bottom-0 end-0 text-end text-white m-2">
                     <h5 class="card-title">${singoloOggetto.title}</h5>
                     <p class="card-text">${singoloOggetto.text}</p>
                </div>
           </div>
           `
 }
+
+
+// al click l'immagine va avanti o indietro
+const prev = document.querySelector('.prev')
+const next = document.querySelector('.next')
+
+let active = 0
+
+next.addEventListener( 'click', function(){
+
+     let activeFoto = document.querySelector('.card.active')
+     console.log(activeFoto)
+
+     let fotoToActive = activeFoto.nextElementSibling
+     console.log(fotoToActive)
+
+    if( active == images.length - 1){
+        active = 0
+    }else{
+        active++;
+    }
+
+    activeFoto.classList.remove('active')
+
+    fotoToActive.classList.add('active')
+
+})
+
+prev.addEventListener( 'click', function(){
+
+    let activeFoto = document.querySelector('.card.active')
+    console.log(activeFoto)
+
+    let fotoToActive = activeFoto.previousElementSibling
+    console.log(fotoToActive)
+
+    if( active == 0){
+        active == images.length - 1
+    }else{
+        active--;
+    }
+
+    activeFoto.classList.remove('active')
+
+    fotoToActive.classList.add('active')
+
+})
+
 
 
 
