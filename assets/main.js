@@ -60,8 +60,8 @@ for(let i = 0; i < images.length; i++){
      let imgSingola = './assets/'
 
      //creo le card
-     document.querySelector('.container-foto').innerHTML += `
-          <div class="position-relative card active">
+     document.querySelector('.container-card').innerHTML += `
+          <div class="card active position-relative ">
                <img src="${imgSingola}${singoloOggetto.image}" class="" alt="...">
                <div class="position-absolute bottom-0 end-0">
                     <h5 class="card-title">${singoloOggetto.title}</h5>
@@ -70,4 +70,7 @@ for(let i = 0; i < images.length; i++){
           </div>
           `
 }
+
+
+
 
